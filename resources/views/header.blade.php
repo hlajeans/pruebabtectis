@@ -1,3 +1,4 @@
+@yield('header')
 <header class="p-3 bg-custom text-white">
     <style>
         .bd-placeholder-img {
