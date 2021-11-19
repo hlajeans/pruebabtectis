@@ -48,8 +48,8 @@ class GrupoEmpresaController extends Controller
     public function store(Request $request)
     {
         $campos = [
-            'Nombre' => 'required|string|max:100|unique:grupo_empresas,Nombre',
-            'NombreCorto' => 'required|string|max:100|unique:grupo_empresas,NombreCorto',
+            'Nombre' => 'required|alpha|max:100|unique:grupo_empresas,Nombre',
+            'NombreCorto' => 'required|alpha|max:100|unique:grupo_empresas,NombreCorto',
             'TipoSociedad' => 'required|string|max:100',
             'Logo' => 'required|mimes:jpeg,png,jpg',
             'Correo' => 'required|email',
@@ -65,7 +65,9 @@ class GrupoEmpresaController extends Controller
 
         $mensaje = [
             'required' => 'El :attribute es requerido',
-            'Logo.required' => 'El logo de la empresa es requerido'
+            'Logo.required' => 'El logo de la empresa es requerido',
+            'Nombre.unique' => 'El nombre ingresado ya se encuentra registrado',
+            'NombreCorto.unique' => 'El nombre corto ingresado ya se encuentra registrado'
         ];
 
         $this->validate($request,$campos,$mensaje);
@@ -115,7 +117,7 @@ class GrupoEmpresaController extends Controller
     {
         $campos = [
             'Nombre' => 'required|alpha|max:100|unique:grupo_empresas,Nombre,{this->grupo_empresa->id}',
-            'NombreCorto' => 'required|string|max:100|unique:grupo_empresas,NombreCorto,{this->grupo_empresa->id}',
+            'NombreCorto' => 'required|alpha|max:100|unique:grupo_empresas,NombreCorto,{this->grupo_empresa->id}',
             'TipoSociedad' => 'required|string|max:100',
             'Correo' => 'required|email',
             'Telefono' => 'required|string|max:100',
@@ -129,6 +131,8 @@ class GrupoEmpresaController extends Controller
 
         $mensaje = [
             'required' => 'El :attribute es requerido',
+            'Nombre.unique' => 'El nombre ingresado ya se encuentra registrado',
+            'NombreCorto.unique' => 'El nombre corto ingresado ya se encuentra registrado'
         ];
         if($request->hasFile('Logo')){
             $campos = ['Logo' => 'required|mimes:jpeg,png,jpg'];

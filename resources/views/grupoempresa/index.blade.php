@@ -98,6 +98,11 @@
         </thead>
 
         <tbody>
+        @if(count($grupoempresas)<=0)
+        <tr>
+            <td class="colspan 8">No hay resultados</td>
+        </tr>
+        @else
         @foreach($grupoempresas as $gp )
         <tr>
         <td>{{$gp->id}}</td>
@@ -122,6 +127,7 @@
         </td>
         </tr>
         @endforeach
+        @endif
         </tbody>
         </table>
         </div>
