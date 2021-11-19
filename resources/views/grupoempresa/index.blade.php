@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <head>
 <title> Grupo Empresa | Gestion TIS </title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
     <header class="p-3 bg-custom text-white">
@@ -66,25 +66,26 @@
 <a href="{{url('/grupoempresa/create')}}" class="btn btn-dark">Registrar Grupo Empresa</a>
 <br/>
 <br/>
-<div class="form">
-    <div class="col-xl-12"> 
-        <div class="form-row">
-            <div class="col-sm-4 my-1" >
-                <input type="text" class="form-control" name="texto">
-            </div>
 
-            <div class="col-auto my-1">
-                <input type="submit" class="btn btn-primary" value="Buscar">
-            </div>
-        
+
+    <div class="form">
+        <div class="col-xl-12"> 
+            <form  action="{{route('grupoempresa.index')}}">
+                <div class="row g-3">
+                    <div class="col-sm-4 my-1" >
+                        <input type="text" class="form-control" placeholder="Buscar..." name="texto">
+                    </div>
+                    <div class="col-auto my-1">
+                        <input type="submit" class="btn btn-primary"  value="Buscar">
+                    </div>
+                </div>
+            </form>     
         </div>
-    </div>
-</div>
-<br/>
-<div class="table-responsive">
-<table class="table table-ligth">
-<thead class="thead-ligth">
-    <tr>
+        <br/>
+        <div class="table-responsive">
+        <table class="table table-ligth">
+        <thead class="thead-ligth">
+        <tr>
         <th>Nro</th>
         <th>Nombre</th>
         <th>Tipo de Sociedad</th>
@@ -94,12 +95,12 @@
         <th>Direccion</th>
         <th>Representante</th>
         <th>Acciones</th>
-    </tr>
-</thead>
+        </tr>
+        </thead>
 
-<tbody>
-    @foreach($grupoempresas as $gp )
-    <tr>
+        <tbody>
+        @foreach($grupoempresas as $gp )
+        <tr>
         <td>{{$gp->id}}</td>
         <td>{{$gp->Nombre}}</td>
         <td>{{$gp->TipoSociedad}}</td>
@@ -120,15 +121,13 @@
         @csrf
         {{method_field('DELETE')}}
         <input class="btn btn-dark" type="submit" onClick="return confirm('¿Estas seguro que deseas borrar?')" value="Borrar">
-        
-    
         </form>
         </td>
-    </tr>
-    @endforeach
-</tbody>
-</table>
-</div>
-</div>
-</body>
-</html>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </body>
+        </html>
