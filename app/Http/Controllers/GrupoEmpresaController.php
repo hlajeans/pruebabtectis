@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\GrupoEmpresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 class GrupoEmpresaController extends Controller
 {
     /**
@@ -14,9 +15,12 @@ class GrupoEmpresaController extends Controller
      */
     public function index(Request $request)
     {
-        //return view('index');
+        /*return view('index');
         $datos['grupoempresas']=GrupoEmpresa::paginate(7);
         return view('grupoempresa.index', $datos);
+        */
+        $texto = trim($request->get('texto'));
+        $grupoe = DB::table('grupo_empresa');
     }
 
     /**

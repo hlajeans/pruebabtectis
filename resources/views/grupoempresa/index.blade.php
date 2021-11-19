@@ -66,20 +66,20 @@
 <a href="{{url('/grupoempresa/create')}}" class="btn btn-dark">Registrar Grupo Empresa</a>
 <br/>
 <br/>
-<div class="form">
     <div class="col-xl-12"> 
-        <div class="form-row">
-            <div class="col-sm-4 my-1" >
-                <input type="text" class="form-control" name="texto">
-            </div>
+        <form action="{{route('grupoempresa.index')}}" method="GET">
+            <div class="row g-3">
+                <div class="col-sm-4 my-1" >
+                    <input type="text" class="form-control" name="texto">
+                </div>
 
-            <div class="col-auto my-1">
-                <input type="submit" class="btn btn-primary" value="Buscar">
+                <div class="col-auto my-1">
+                    <input type="submit" class="btn btn-primary" value="Buscar">
+                </div>
+    
             </div>
-        
-        </div>
+        </form>
     </div>
-</div>
 <br/>
 <div class="table-responsive">
 <table class="table table-ligth">
