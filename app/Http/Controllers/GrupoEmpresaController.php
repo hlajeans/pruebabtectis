@@ -20,7 +20,13 @@ class GrupoEmpresaController extends Controller
         return view('grupoempresa.index', $datos);
         */
         $texto = trim($request->get('texto'));
-        $grupoe = DB::table('grupo_empresa');
+        $grupoempresas = DB::table('grupo_empresas')
+        ->select('id','Nombre','NombreCorto','TipoSociedad','Direccion','Correo','Telefono','Representante')
+        ->where('Nombre','LIKE','%'.$texto.'%')
+        ->orWhere('NombreCorto','LIKE','$'.$texto.'%')
+        ->orderBy('Nombre','asc')
+        ->paginate(10);
+        return view('grupoempresa.index',compact('grupoempresas','texto'));
     }
 
     /**

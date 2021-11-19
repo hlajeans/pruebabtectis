@@ -66,12 +66,11 @@
 <a href="{{url('/grupoempresa/create')}}" class="btn btn-dark">Registrar Grupo Empresa</a>
 <br/>
 <br/>
-<<<<<<< HEAD
     <div class="col-xl-12"> 
         <form action="{{route('grupoempresa.index')}}" method="GET">
             <div class="row g-3">
                 <div class="col-sm-4 my-1" >
-                    <input type="text" class="form-control" name="texto">
+                    <input type="text" class="form-control" name="texto" value="{{$texto}}">
                 </div>
 
                 <div class="col-auto my-1">
@@ -82,36 +81,14 @@
         </form>
     </div>
 <br/>
-<div class="table-responsive">
-<table class="table table-ligth">
-<thead class="thead-ligth">
+    <div class="table-responsive">
+    <table class="table table-ligth">
+    <thead class="thead-ligth">
     <tr>
-=======
-
-
-    <div class="form">
-        <div class="col-xl-12"> 
-            <form  action="{{route('grupoempresa.index')}}">
-                <div class="row g-3">
-                    <div class="col-sm-4 my-1" >
-                        <input type="text" class="form-control" placeholder="Buscar..." name="texto">
-                    </div>
-                    <div class="col-auto my-1">
-                        <input type="submit" class="btn btn-primary"  value="Buscar">
-                    </div>
-                </div>
-            </form>     
-        </div>
-        <br/>
-        <div class="table-responsive">
-        <table class="table table-ligth">
-        <thead class="thead-ligth">
-        <tr>
->>>>>>> 60e64225decf85044ddf5801037b9e7c5634ac0b
         <th>Nro</th>
         <th>Nombre</th>
+        <th>NombreCorto</th>
         <th>Tipo de Sociedad</th>
-        <th>Logo</th>
         <th>Correo</th>
         <th>Telefono</th>
         <th>Direccion</th>
@@ -125,10 +102,8 @@
         <tr>
         <td>{{$gp->id}}</td>
         <td>{{$gp->Nombre}}</td>
+        <td>{{$gp->NombreCorto}}</td>
         <td>{{$gp->TipoSociedad}}</td>
-        <td>
-        <img class="img-thumbnail" src="{{asset('storage').'/'.$gp->Logo}}" width=100 alt="">
-        </td>
         <td>{{$gp->Correo}}</td>
         <td>{{$gp->Telefono}}</td>
         <td>{{$gp->Direccion}}</td>
