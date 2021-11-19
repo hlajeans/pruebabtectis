@@ -82,7 +82,7 @@
     </div>
 <br/>
     <div class="table-responsive">
-    <table class="table table-ligth">
+    <table class="table table-ligth table-striped">
     <thead class="thead-ligth">
     <tr>
         <th>Nro</th>
