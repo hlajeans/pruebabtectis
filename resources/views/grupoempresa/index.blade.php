@@ -63,6 +63,7 @@
 
 
 <div class="container">
+<a href="#" class="btn btn-dark">Mi Grupo Empresa</a>
 <a href="{{url('/grupoempresa/create')}}" class="btn btn-dark">Registrar Grupo Empresa</a>
 <br/>
 <br/>
@@ -70,7 +71,7 @@
         <form action="{{route('grupoempresa.index')}}" method="GET">
             <div class="row g-3">
                 <div class="col-sm-4 my-1" >
-                    <input type="text" class="form-control" name="texto" value="{{$texto}}">
+                    <input type="text" class="form-control" placeholder="Ingrese un nombre..." name="texto" value="{{$texto}}">
                 </div>
 
                 <div class="col-auto my-1">
