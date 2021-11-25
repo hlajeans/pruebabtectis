@@ -63,7 +63,7 @@
 
 
 <div class="container">
-<a href="#" class="btn btn-dark">Mi Grupo Empresa</a>
+<a href="{{route('cards.index')}}" class="btn btn-dark">Mi Grupo Empresa</a>
 <a href="{{url('/grupoempresa/create')}}" class="btn btn-dark">Registrar Grupo Empresa</a>
 <br/>
 <br/>

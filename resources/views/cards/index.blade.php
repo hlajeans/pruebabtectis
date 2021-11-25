@@ -1,4 +1,10 @@
-@yield('header')
+<!DOCTYPE html>
+<head>
+<title> Mi Grupo Empresa | Gestion TIS </title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    
 <header class="p-3 bg-custom text-white">
     <style>
         .bd-placeholder-img {
@@ -31,17 +37,23 @@
             <li><a href="#" class="nav-link px-2 text-blue">Contactos</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <!--form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
             <input type="search" class="form-control form-control-dark" placeholder="Buscar..."
                 aria-label="Search">
-        </form>
+        </form-->
 
         <div class="text-end">
             <button type="button" class="btn btn-warning">Iniciar Sesion</button>
             <button type="button" class="btn btn-warning">Registrase</button>
         </div>
     </div>
-</div>
-</header>
+    </div>
+    </header>
 
-</header>  
+    <div class="container">
+
+
+    </div>
+
+</body>
+</html>
