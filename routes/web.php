@@ -49,4 +49,4 @@ Route::post('/convocatoria', [App\Http\Controllers\ConvocatoriaController::class
 
 Route::get('/convocatoria:get/{id}', [App\Http\Controllers\ConvocatoriaController::class, 'edit'])->name('editar');
 
-Route::resource('cards',CardController::class);
+Route::resource('card',CardController::class);
