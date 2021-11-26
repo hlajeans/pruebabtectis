@@ -6,7 +6,7 @@
 <div class="container">
     <form action="{{url('/card')}}" method="post" enctype="multipart/form-data">
     @csrf
-    @include('card.form',['modo'=>'Registrar'])
+    @include('card.form',['modo'=>'Añadir'])
     </form>
 </div>
 </body>
