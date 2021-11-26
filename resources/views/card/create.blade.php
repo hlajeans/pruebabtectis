@@ -4,12 +4,10 @@
 </head>
 <body>
 <div class="container">
-
-<form action="{{url('/card')}}" method="post" enctype="multipart/form-data">
-@csrf
-@include('card.form',['modo'=>'Registrar'])
+    <form action="{{url('/card')}}" method="post" enctype="multipart/form-data">
+    @csrf
+    @include('card.form',['modo'=>'Registrar'])
+    </form>
 </div>
 </body>
 <html>
-
-@endsection

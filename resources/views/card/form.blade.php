@@ -1,4 +1,6 @@
-<h1>{{$modo}} Tarjeta</h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<br/>
+<h1 >{{$modo}} Tarjeta</h1>
 @if(count($errors)>0)
 <div class="alert alert-danger" role="alert">
 <ul>
@@ -10,16 +12,14 @@
 @endif
 
 <div class="form-group">
-<label for="Nombre"> Titulo*</label>
-<input type= "text" class="form-control" name="Nombre" id="Nombre" value="{{isset($gp->Nombre)? $gp->Nombre:old('Nombre')}}">
+<label for="Titulo" class="form-label"> Titulo*</label>
+<input type= "text" class="form-control" name="Titulo" id="Titulo" value="{{isset($card->Titulo)? $card->Titulo:old('Titulo')}}">
 </div>
 
 <div class="form-group">
-<label for="NombreCorto"> Descripcion</label>
-<input type= "text" class="form-control" name="NombreCorto" id="NombreCorto" value="{{isset($gp->NombreCorto)? $gp->NombreCorto:old('NombreCorto')}}">
+<label for="Descripcion" class="form-label"> Descripcion*</label>
+<input type= "text" class="form-control" name="Descripcion" id="Descripcion" value="{{isset($card->Descripcion)? $card->Descripcion:old('Descripcion')}}">
 </div>
-
-<input type= "submit" class="btn btn-dark"value="{{$modo}} datos">
-
-<a href="{{url('/grupoempresa')}}" class="btn btn-secondary">Regresar</a>
 <br/>
+<input type= "submit" class="btn btn-dark" value="{{$modo}} datos">
+<a href="{{url('/card')}}" class="btn btn-secondary">Regresar</a>

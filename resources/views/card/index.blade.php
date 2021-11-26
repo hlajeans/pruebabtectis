@@ -55,5 +55,24 @@
 <a href="{{url('/card/create')}}" class="btn btn-dark">+ Añadir tarjeta</a>
 <br/>
 
+
+    <div class="container">
+        @if(count($cards)<=0)
+        <br/>
+        <h4>No se encontraron tarjetas en este espacio de trabajo</h4>
+        @else
+        @foreach($cards as $card)
+        <br/>
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{$card->Titulo}}</div>
+            <div class="card-body">
+              <h5 class="card-title">Descripcion:</h5>
+              <p class="card-text">{{$card->Descripcion}}</p>
+            </div>
+          </div>
+          @endforeach
+          @endif
+    </div>
+
     </body>
         </html>

@@ -14,7 +14,8 @@ class CardController extends Controller
      */
     public function index()
     {
-        return view('card.index');
+        $carta['cards'] = Card::paginate(10);
+        return view('card.index',$carta);
     }
 
     /**
@@ -24,7 +25,8 @@ class CardController extends Controller
      */
     public function create()
     {
-        //
+        return view('card.create');
+
     }
 
     /**
@@ -35,7 +37,23 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos = [
+            'Titulo' => 'required|string|max:50|unique:cards,Titulo',
+            'Descripcion' => 'required|string|max:200',
+
+        ];
+
+        $mensaje = [
+            'Titulo.required' => 'El :attribute es requerido',
+            'Descripcion.required' => 'La :attribute es requerido'
+        ];
+
+        $this->validate($request,$campos,$mensaje);
+
+        $datoscards = request()->except('_token');
+             
+        Card::insert($datoscards);
+        return redirect('card')->with('mensaje','Tarjeta añadida!');
     }
 
     /**
